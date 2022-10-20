@@ -355,7 +355,10 @@
     const da = new DynamicAdapt("max");
     da.init();
     window.addEventListener("DOMContentLoaded", (function() {
-        if (document.querySelector(".wrapper").classList.contains("header--black")) this.document.querySelector(".header__logo img").src = "../img/logo-black.png";
+        if (document.querySelector(".wrapper").classList.contains("header--black")) {
+            this.document.querySelector(".header__logo img").src = "img/logo-black.png";
+            if (this.document.querySelector("source")) this.document.querySelector("source").srcset = "img/logo-black.webp";
+        }
     }));
     const paggingLinks = document.querySelectorAll(".pagging__link");
     const paggingArrows = document.querySelectorAll(".pagging__arrow");
